@@ -1,0 +1,65 @@
+# Try out gabor filters
+# http://micro.stanford.edu/wiki/Install_FFTW3 to INSTALL FFTW3
+# INRIA's GIST http://lear.inrialpes.fr/software
+import cv2 
+import numpy as np
+from matplotlib import pyplot as plt
+import matplotlib.cm as cm
+import os
+from subprocess import PIPE, Popen
+
+
+def tic():
+    #Homemade version of matlab tic and toc functions
+    import time
+    global startTime_for_tictoc
+    startTime_for_tictoc = time.time()
+
+def toc():
+    import time
+    if 'startTime_for_tictoc' in globals():
+        print "Elapsed time is " + str(time.time() - startTime_for_tictoc) + " seconds."
+    else:
+        print "Toc: start time not set"
+
+
+def cmdline(command):
+    process = Popen(
+        args=command,
+        stdout=PIPE,
+        shell=True
+    )
+    return process.communicate()[0]
+
+tic()
+I = cv2.imread(os.getcwd()+'/Scenes/coast_art294.jpg', 0) # Load color image as grayscale
+I = cv2.resize(I, (64,64));
+cv2.imwrite('ar1.ppm', I) ;
+a = cmdline("./compute_gist ar1.ppm") # Get string from command line
+a = [float(x) for x in a.split()] # Convert them to actual floats
+
+I = cv2.imread(os.getcwd()+'/Scenes/insidecity_urb123.jpg', 0) # Load color image as grayscale
+I = cv2.resize(I, (64,64));
+cv2.imwrite('ar1.ppm', I) ;
+b = cmdline("./compute_gist ar1.ppm") # Get string from command line
+b = [float(x) for x in b.split()] # Convert them to actual floats
+dist = np.linalg.norm(np.array(a)-np.array(b))
+print(dist)
+
+I = cv2.imread(os.getcwd()+'/Scenes/coast_art1130.jpg', 0) # Load color image as grayscale
+I = cv2.resize(I, (64,64));
+cv2.imwrite('ar1.ppm', I) ;
+b = cmdline("./compute_gist ar1.ppm") # Get string from command line
+b = [float(x) for x in b.split()] # Convert them to actual floats
+dist = np.linalg.norm(np.array(a)-np.array(b))
+print(dist)
+
+
+
+toc()
+plt.plot(np.arange(0, len(a), 1),a)
+plt.show()
+#GIST
+
+
+

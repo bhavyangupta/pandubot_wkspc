@@ -1,0 +1,9 @@
+- command: "get"
+  type: "object recognition"
+  goals:
+    - "snickers": 0
+    - "kit kat": 1
+    - "root beer": 2
+    - "pepsi": 3
+    - "party mix": 4
+

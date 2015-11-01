@@ -1,0 +1,12 @@
+import numpy as np
+import cv2
+from matplotlib import pyplot as plt
+import SIFTMatching
+
+
+img2 = cv2.imread('26.png',0) # trainImage
+
+Label = SIFTMatching.IsMatch(img2)
+print Label
+
+

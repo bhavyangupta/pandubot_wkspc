@@ -1,0 +1,13 @@
+<launch>
+<node name="stereo_image_processing" pkg="stereo_image_proc" type="stereo_image_proc">
+  <param name="approximate_sync" value="true"/>
+  <param name="queue_size" value="20"/>
+  <remap from="left/image_raw" to="left_camera/image_raw"/>
+  <remap from="left/camera_info" to="left_camera/camera_info"/>
+  <remap from="right/image_raw" to="right_camera/image_raw"/>
+  <remap from="right/camera_info" to="right_camera/camera_info"/>
+</node>
+<!-- <node name="stereo_view" pkg="image_view" type="stereo_view"> -->
+  
+<!-- </node> -->
+</launch>

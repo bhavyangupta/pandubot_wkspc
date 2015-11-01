@@ -1,0 +1,3 @@
+<launch>
+<node pkg="pandubot_waypoint_nav" type="pandu_pingPong_node" name="ping_pong_node"/>
+</launch>

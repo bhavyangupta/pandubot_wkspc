@@ -1,0 +1,7 @@
+- command: "goto"
+  type: "navigation goal"
+  goals:
+    - "vending machine": [11.3,1,0]
+    - "dustbin": [0,3,0]
+    - "bump space": [3,3,0]
+

@@ -1,0 +1,6 @@
+build/
+devel/
+logs/
+docs/
+dev/
+*.jpg

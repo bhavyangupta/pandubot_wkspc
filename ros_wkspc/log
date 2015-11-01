@@ -1,0 +1,40 @@
+Linking CXX executable /home/bhavya/pandubot_wkspc/ros_wkspc/devel/lib/pandubot_planner/test_planner
+CMakeFiles/test_planner.dir/src/read_yaml.cpp.o: In function `CommandParser::CommandParser(std::string)':
+read_yaml.cpp:(.text+0x43): undefined reference to `YAML::LoadFile(std::string const&)'
+CMakeFiles/test_planner.dir/src/read_yaml.cpp.o: In function `YAML::detail::memory_holder::create_node()':
+read_yaml.cpp:(.text._ZN4YAML6detail13memory_holder11create_nodeEv[_ZN4YAML6detail13memory_holder11create_nodeEv]+0x1c): undefined reference to `YAML::detail::memory::create_node()'
+CMakeFiles/test_planner.dir/src/read_yaml.cpp.o: In function `YAML::detail::node_ref::mark_defined()':
+read_yaml.cpp:(.text._ZN4YAML6detail8node_ref12mark_definedEv[_ZN4YAML6detail8node_ref12mark_definedEv]+0x1c): undefined reference to `YAML::detail::node_data::mark_defined()'
+CMakeFiles/test_planner.dir/src/read_yaml.cpp.o: In function `YAML::detail::node_ref::set_null()':
+read_yaml.cpp:(.text._ZN4YAML6detail8node_ref8set_nullEv[_ZN4YAML6detail8node_ref8set_nullEv]+0x1c): undefined reference to `YAML::detail::node_data::set_null()'
+CMakeFiles/test_planner.dir/src/read_yaml.cpp.o: In function `YAML::detail::node_ref::set_scalar(std::string const&)':
+read_yaml.cpp:(.text._ZN4YAML6detail8node_ref10set_scalarERKSs[_ZN4YAML6detail8node_ref10set_scalarERKSs]+0x27): undefined reference to `YAML::detail::node_data::set_scalar(std::string const&)'
+CMakeFiles/test_planner.dir/src/read_yaml.cpp.o: In function `YAML::detail::node_ref::begin()':
+read_yaml.cpp:(.text._ZN4YAML6detail8node_ref5beginEv[_ZN4YAML6detail8node_ref5beginEv]+0x2a): undefined reference to `YAML::detail::node_data::begin()'
+CMakeFiles/test_planner.dir/src/read_yaml.cpp.o: In function `YAML::detail::node_ref::end()':
+read_yaml.cpp:(.text._ZN4YAML6detail8node_ref3endEv[_ZN4YAML6detail8node_ref3endEv]+0x2a): undefined reference to `YAML::detail::node_data::end()'
+CMakeFiles/test_planner.dir/src/read_yaml.cpp.o: In function `YAML::Node::Scalar() const':
+read_yaml.cpp:(.text._ZNK4YAML4Node6ScalarEv[_ZNK4YAML4Node6ScalarEv]+0x64): undefined reference to `YAML::detail::node_data::empty_scalar'
+CMakeFiles/test_planner.dir/src/read_yaml.cpp.o: In function `YAML::Node::AssignNode(YAML::Node const&)':
+read_yaml.cpp:(.text._ZN4YAML4Node10AssignNodeERKS0_[_ZN4YAML4Node10AssignNodeERKS0_]+0xe1): undefined reference to `YAML::detail::memory_holder::merge(YAML::detail::memory_holder&)'
+CMakeFiles/test_planner.dir/src/read_yaml.cpp.o: In function `YAML::detail::node& YAML::detail::node_data::get<std::string>(std::string const&, boost::shared_ptr<YAML::detail::memory_holder>)':
+read_yaml.cpp:(.text._ZN4YAML6detail9node_data3getISsEERNS0_4nodeERKT_N5boost10shared_ptrINS0_13memory_holderEEE[_ZN4YAML6detail9node_data3getISsEERNS0_4nodeERKT_N5boost10shared_ptrINS0_13memory_holderEEE]+0xae): undefined reference to `YAML::detail::node_data::convert_to_map(boost::shared_ptr<YAML::detail::memory_holder>)'
+read_yaml.cpp:(.text._ZN4YAML6detail9node_data3getISsEERNS0_4nodeERKT_N5boost10shared_ptrINS0_13memory_holderEEE[_ZN4YAML6detail9node_data3getISsEERNS0_4nodeERKT_N5boost10shared_ptrINS0_13memory_holderEEE]+0x21c): undefined reference to `YAML::detail::node_data::insert_map_pair(YAML::detail::node&, YAML::detail::node&)'
+CMakeFiles/test_planner.dir/src/read_yaml.cpp.o: In function `YAML::detail::node& YAML::detail::node_data::convert_to_node<std::string>(std::string const&, boost::shared_ptr<YAML::detail::memory_holder>)':
+read_yaml.cpp:(.text._ZN4YAML6detail9node_data15convert_to_nodeISsEERNS0_4nodeERKT_N5boost10shared_ptrINS0_13memory_holderEEE[_ZN4YAML6detail9node_data15convert_to_nodeISsEERNS0_4nodeERKT_N5boost10shared_ptrINS0_13memory_holderEEE]+0x56): undefined reference to `YAML::detail::memory_holder::merge(YAML::detail::memory_holder&)'
+collect2: error: ld returned 1 exit status
+make[2]: *** [/home/bhavya/pandubot_wkspc/ros_wkspc/devel/lib/pandubot_planner/test_planner] Error 1
+make[1]: *** [pandubot_planner/CMakeFiles/test_planner.dir/all] Error 2
+make: *** [all] Error 2
+Base path: /home/bhavya/pandubot_wkspc/ros_wkspc
+Source space: /home/bhavya/pandubot_wkspc/ros_wkspc/src
+Build space: /home/bhavya/pandubot_wkspc/ros_wkspc/build
+Devel space: /home/bhavya/pandubot_wkspc/ros_wkspc/devel
+Install space: /home/bhavya/pandubot_wkspc/ros_wkspc/install
+####
+#### Running command: "make cmake_check_build_system" in "/home/bhavya/pandubot_wkspc/ros_wkspc/build"
+####
+####
+#### Running command: "make -j4 -l4" in "/home/bhavya/pandubot_wkspc/ros_wkspc/build/pandubot_planner"
+####
+Invoking "make -j4 -l4" failed

@@ -1,0 +1,8 @@
+Needs Python, OpenCV 2.4.9, pip installer, MatplotLib, Numpy, FFTW3
+Pip: sudo apt-get install python-pip
+Numpy: sudo pip install numpy
+Matplotlib: pip install matplotlib or easy_install matplotlib (in ~/)
+NOTE: Matplotlib might ask for dateutil
+pip install python-dateutil
+NOTE: Matplotlib might ask for pyparsing
+easy_install pyparsing
