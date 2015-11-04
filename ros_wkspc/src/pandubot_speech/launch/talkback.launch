@@ -1,0 +1,15 @@
+<launch>
+
+  <node name="recognizer" pkg="pocketsphinx" type="recognizer.py">
+    <param name="lm" value="$(find pandubot_speech)/config/5707.lm"/>
+    <param name="dict" value="$(find pandubot_speech)/config/5707.dic"/>
+  </node>
+
+  <node name="soundplay_node" pkg="sound_play" type="soundplay_node.py" output="screen"/>
+
+  <node name="talkback" pkg="pandubot_speech" type="talkback.py" output="screen">
+    <param name="voice" value="voice_don_diphone"/>
+  	<param name="wavepath" value="$(find pandubot_speech)/sounds"/> 
+  </node>
+
+</launch>

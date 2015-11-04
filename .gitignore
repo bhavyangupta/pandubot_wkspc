@@ -3,6 +3,9 @@ devel/
 logs/
 docs/
 dev/
+ros_wkspc/src/empty/
 *.jpg
 *.pyc
 *.py~
+*.swp
+ros_wkspc/log

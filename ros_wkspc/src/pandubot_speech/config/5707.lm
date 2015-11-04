@@ -1,0 +1,105 @@
+Language model created by QuickLM on Wed Oct 28 01:44:33 EDT 2015
+Copyright (c) 1996-2010 Carnegie Mellon University and Alexander I. Rudnicky
+
+The model is in standard ARPA format, designed by Doug Paul while he was at MITRE.
+
+The code that was used to produce this language model is available in Open Source.
+Please visit http://www.speech.cs.cmu.edu/tools/ for more information
+
+The (fixed) discount mass is 0.5. The backoffs are computed using the ratio method.
+This model based on a corpus of 17 sentences and 21 words
+
+\data\
+ngram 1=21
+ngram 2=36
+ngram 3=25
+
+\1-grams:
+-0.8487 </s> -0.3010
+-0.8487 <s> -0.2131
+-2.0792 AND -0.2347
+-2.0792 BENCH -0.2347
+-2.0792 BUMP -0.2974
+-2.0792 DO -0.2937
+-2.0792 DONT -0.2825
+-2.0792 DUSTBIN -0.2347
+-2.0792 FETCH -0.2347
+-2.0792 GET -0.2347
+-1.7782 GO -0.2304
+-2.0792 HOME -0.2347
+-1.3802 LISTEN -0.2347
+-2.0792 MACHINE -0.2347
+-1.7782 NOT -0.2825
+-1.7782 PANDU -0.2788
+-2.0792 REACH -0.2347
+-2.0792 SNICKERS -0.2347
+-2.0792 SPACE -0.2347
+-2.0792 TO -0.2347
+-2.0792 VENDING -0.2974
+
+\2-grams:
+-1.5315 <s> AND 0.0000
+-1.5315 <s> BENCH 0.0000
+-1.5315 <s> BUMP 0.0000
+-1.5315 <s> DO 0.0000
+-1.5315 <s> DUSTBIN 0.0000
+-1.5315 <s> FETCH 0.0000
+-1.5315 <s> GET 0.0000
+-1.2304 <s> GO 0.0000
+-1.5315 <s> HOME 0.0000
+-1.5315 <s> LISTEN 0.0000
+-1.5315 <s> NOT 0.0000
+-1.2304 <s> PANDU 0.0000
+-1.5315 <s> REACH 0.0000
+-1.5315 <s> SNICKERS 0.0000
+-1.5315 <s> VENDING 0.0000
+-0.3010 AND </s> -0.3010
+-0.3010 BENCH </s> -0.3010
+-0.3010 BUMP SPACE 0.0000
+-0.3010 DO NOT 0.0000
+-0.3010 DONT LISTEN 0.0000
+-0.3010 DUSTBIN </s> -0.3010
+-0.3010 FETCH </s> -0.3010
+-0.3010 GET </s> -0.3010
+-0.6021 GO </s> -0.3010
+-0.6021 GO TO 0.0000
+-0.3010 HOME </s> -0.3010
+-0.3010 LISTEN </s> -0.3010
+-0.3010 MACHINE </s> -0.3010
+-0.3010 NOT LISTEN 0.0000
+-0.6021 PANDU DONT 0.0000
+-0.6021 PANDU LISTEN 0.0000
+-0.3010 REACH </s> -0.3010
+-0.3010 SNICKERS </s> -0.3010
+-0.3010 SPACE </s> -0.3010
+-0.3010 TO </s> -0.3010
+-0.3010 VENDING MACHINE 0.0000
+
+\3-grams:
+-0.3010 <s> AND </s>
+-0.3010 <s> BENCH </s>
+-0.3010 <s> BUMP SPACE
+-0.3010 <s> DO NOT
+-0.3010 <s> DUSTBIN </s>
+-0.3010 <s> FETCH </s>
+-0.3010 <s> GET </s>
+-0.6021 <s> GO </s>
+-0.6021 <s> GO TO
+-0.3010 <s> HOME </s>
+-0.3010 <s> LISTEN </s>
+-0.3010 <s> NOT LISTEN
+-0.6021 <s> PANDU DONT
+-0.6021 <s> PANDU LISTEN
+-0.3010 <s> REACH </s>
+-0.3010 <s> SNICKERS </s>
+-0.3010 <s> VENDING MACHINE
+-0.3010 BUMP SPACE </s>
+-0.3010 DO NOT LISTEN
+-0.3010 DONT LISTEN </s>
+-0.3010 GO TO </s>
+-0.3010 NOT LISTEN </s>
+-0.3010 PANDU DONT LISTEN
+-0.3010 PANDU LISTEN </s>
+-0.3010 VENDING MACHINE </s>
+
+\end\

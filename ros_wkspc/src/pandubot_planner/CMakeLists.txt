@@ -17,8 +17,8 @@ add_executable(test_planner src/sentence.cpp src/test_planner.cpp src/read_yaml.
 target_link_libraries(test_planner ${catkin_LIBRARIES} ${YAML_LIBRARY}) 
 
 ## Main Planner
-add_executable(main_planner_node src/sentence.cpp src/main_planner.cpp src/read_yaml.cpp)
-target_link_libraries(main_planner_node ${catkin_LIBRARIES} ${YAML_LIBRARY})
+#add_executable(main_planner_node src/sentence.cpp src/main_planner.cpp src/read_yaml.cpp)
+#target_link_libraries(main_planner_node ${catkin_LIBRARIES} ${YAML_LIBRARY})
 
 
  

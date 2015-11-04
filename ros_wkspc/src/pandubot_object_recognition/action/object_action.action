@@ -1,0 +1,8 @@
+#goal
+int32 target_class
+---
+#result
+int32 detected_class
+---
+#feedback
+int32 busy_code

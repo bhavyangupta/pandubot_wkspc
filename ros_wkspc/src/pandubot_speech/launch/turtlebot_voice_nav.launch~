@@ -1,0 +1,7 @@
+<launch>
+
+  <node name="voice_nav" pkg="pandubot_voice" type="pandubot_voice.py" output="screen">
+
+  </node>
+
+</launch>

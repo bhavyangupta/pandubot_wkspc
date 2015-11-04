@@ -2,7 +2,7 @@
 #include <ros/ros.h>
 #include "sentence.hpp"
 #include "read_yaml.hpp"
-#include "pandubot_msgs/atomic_plan.h"
+//#include "pandubot_msgs/atomic_plan.h"
 
 
 void callback_speech() {

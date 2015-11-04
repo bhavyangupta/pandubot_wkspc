@@ -1,0 +1,54 @@
+pause speech
+continue speech
+move forward
+move backward
+move back
+move left
+move right
+go forward
+go backward
+go back
+go left
+go right
+go straight
+come forward
+come backward
+come left
+come right
+turn left
+turn right
+rotate left
+rotate right
+faster
+speed up
+slower
+slow down
+quarter speed
+half speed
+full speed
+stop
+stop now
+<<<<<<< HEAD
+go to dustbin
+dustbin
+=======
+>>>>>>> d7252acda6f48dab3e39864c9ed195b502cdfb94
+halt
+abort
+kill
+panic
+help
+help me
+freeze
+turn off
+shut down
+cancel
+<<<<<<< HEAD
+bench 
+go to bench 
+go to restroom
+restroom
+go to home
+home
+=======
+>>>>>>> d7252acda6f48dab3e39864c9ed195b502cdfb94

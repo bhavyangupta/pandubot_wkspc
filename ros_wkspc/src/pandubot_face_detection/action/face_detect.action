@@ -1,0 +1,9 @@
+#goal
+# 1-> male, 2-> female
+int32 target_gender 
+---
+#result
+int32 detected_gender 
+---
+#feedback
+int32 busy_code

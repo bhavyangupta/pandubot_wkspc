@@ -6,9 +6,10 @@ from matplotlib import pyplot as plt
 def IsMatch(img2):
 	MIN_MATCH_COUNT = 10
 	MatchThld = 200
-
-	img1 = cv2.imread('Cropped.png',0)          # queryImage
-	#img2 = cv2.imread('1.png',0) # trainImage
+  train_image_path = '/home/bhavya/pandubot_wkspc/ros_wkspc/src/pandubot_object_recognition/param/Cropped.png'
+  print train_image_path
+  img1 = cv2.imread(train_image_path,0)          # queryImage
+  #img2 = cv2.imread('1.png',0) # trainImage
 
 	# Initiate SIFT detector
 	sift = cv2.SIFT()

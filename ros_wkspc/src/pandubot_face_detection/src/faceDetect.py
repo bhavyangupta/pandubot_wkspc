@@ -8,7 +8,8 @@ from common import clock, draw_str
 
 def faceDetect(img,classifier_xml_dir):
     cascade = cv2.CascadeClassifier(classifier_xml_dir)
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    #gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)  ## Feed in grayscale
+    gray = img 
     gray = cv2.equalizeHist(gray)
     t = clock()
     rects = detect(gray, cascade)

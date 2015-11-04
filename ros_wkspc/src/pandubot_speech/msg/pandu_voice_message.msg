@@ -1,0 +1,2 @@
+string first_string
+string second_string

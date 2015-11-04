@@ -1,0 +1,9 @@
+<launch>
+
+  <node name="recognizer" pkg="pocketsphinx" type="recognizer.py" output="screen">
+
+    <param name="lm" value="$(find pandubot_voice)/config/pandu_voice.lm"/>
+    <param name="dict" value="$(find pandubot_voice)/config/pandu_voice.dic"/>
+  </node>
+  
+</launch>

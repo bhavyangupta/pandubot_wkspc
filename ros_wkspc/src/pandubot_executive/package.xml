@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
-  <name>pandubot_face_detection</name>
+  <name>pandubot_executive</name>
   <version>0.0.0</version>
-  <description>The pandubot_face_detection package</description>
+  <description>The pandubot_executive package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag --> 
   <!-- Example:  -->
@@ -19,7 +19,7 @@
   <!-- Url tags are optional, but mutiple are allowed, one per tag -->
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
   <!-- Example: -->
-  <!-- <url type="website">http://wiki.ros.org/pandubot_face_detection</url> -->
+  <!-- <url type="website">http://wiki.ros.org/pandubot_executive</url> -->
 
 
   <!-- Author tags are optional, mutiple are allowed, one per tag -->
@@ -40,15 +40,13 @@
   <!-- Use test_depend for packages you need only for testing: -->
   <!--   <test_depend>gtest</test_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
-  <build_depend>rospy</build_depend>
-  <build_depend>sensor_msgs</build_depend>
-  <build_depend>std_msgs</build_depend>
-  <build_depend>actionlib_msgs</build_depend>
+  <build_depend> pandubot_object_recognition</build_depend>
+  <build_depend> pandubot_face_detection</build_depend>
+  <build_depend> move_base</build_depend>
+  <run_depend> move_base</run_depend>
+  <run_depend> pandubot_object_recognition</run_depend>
+  <run_depend> pandubot_face_detection</run_depend>
 
-  <run_depend>rospy</run_depend>
-  <run_depend>sensor_msgs</run_depend>
-  <run_depend>std_msgs</run_depend> 
-  <run_depend>actionlib_msgs</run_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
