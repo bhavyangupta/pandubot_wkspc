@@ -1,9 +1,9 @@
 // Copyright[2015]
 #include <string>
 #include "speech_synthesiser.hpp"
-#include "navigation_action_client.hpp"
-#include "face_action_client.hpp"
-#include "object_action_client.hpp"
+#include "pandubot_libraries/navigation_action_client.hpp"
+#include <pandubot_libraries/face_action_client.hpp>
+#include <pandubot_libraries/object_action_client.hpp>
 
 using std::string;
 
