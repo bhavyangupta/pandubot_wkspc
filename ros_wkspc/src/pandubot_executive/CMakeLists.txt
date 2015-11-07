@@ -6,7 +6,6 @@ find_package(catkin REQUIRED COMPONENTS roscpp
                                         pandubot_libraries)
 
 include_directories(${catkin_INCLUDE_DIRS}  
-                    ${pandubot_libraries_INCLUDE_DIRS}
                     inc/)
 
 catkin_package(CATKIN_DEPENDS pandubot_libraries)
