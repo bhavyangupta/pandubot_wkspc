@@ -27,13 +27,14 @@ add_dependencies(pandubotActionClients pandubot_object_recognition_generate_mess
 target_link_libraries(pandubotActionClients ${catkin_LIBRARIES})
 
 
-
-install(TARGETS pandubotActionClients
-        ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-        LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-       )
-       
-install(DIRECTORY include/${PROJECT_NAME}/
-        DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION})
+####### Optional Install Targets ################
+# install(TARGETS pandubotActionClients
+#         ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+#         LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+#        )
+#        
+# message(PATH ${CATKIN_PACKAGE_INCLUDE_DESTINATION})
+# install(DIRECTORY include/${PROJECT_NAME}/
+#         DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION})
 
 
