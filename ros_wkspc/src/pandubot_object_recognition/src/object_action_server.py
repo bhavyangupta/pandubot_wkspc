@@ -5,7 +5,7 @@ import pandubot_object_recognition.msg
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 import numpy as np
-import SIFTMatching
+from sift import SIFTMatching
 import cv2
 import time
 

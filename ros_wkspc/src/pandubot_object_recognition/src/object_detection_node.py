@@ -1,7 +1,7 @@
 #!/usr/bin/env python 
 
 import rospy
-import SIFTMatching
+from sift import SIFTMatching
 import numpy as np
 from cv_bridge import CvBridge
 from sensor_msgs.msg import Image
