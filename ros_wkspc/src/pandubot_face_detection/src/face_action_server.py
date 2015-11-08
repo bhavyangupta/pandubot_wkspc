@@ -37,7 +37,7 @@ class FaceAction(object):
     print 'goal rx'
     self.feedback_.busy_code = 0
     face_found = 0 
-    while not :exface_found: 
+    while not face_found: 
       self.action_server_.publish_feedback(self.feedback_)
       print '[FD] wait for image'
       image_msg = rospy.wait_for_message("/usb_cam/image_raw",Image) 

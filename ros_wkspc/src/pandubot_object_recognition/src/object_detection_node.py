@@ -21,9 +21,6 @@ import object_action_server
 #   #cv2.imshow('debug',cv_image_gray)
 #   print label
 
-
-
-
 def run_object_detection():
   print 'hello'
   rospy.init_node("pandubot_object_detection",anonymous=False)
@@ -31,11 +28,6 @@ def run_object_detection():
   #rospy.Subscriber("/usb_cam/image_raw",Image,callback_image)
   rospy.spin()
   
-
 if __name__ == '__main__':
   run_object_detection()
   print "hello out main" 
-  
-  
-  
-    
