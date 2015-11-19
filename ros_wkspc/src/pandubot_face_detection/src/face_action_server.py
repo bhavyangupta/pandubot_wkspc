@@ -45,6 +45,7 @@ class FaceAction(object):
       cv_image_gray = image_msg_to_grayscale(image_msg)
       (bbox,face_found) = faceDetect.faceDetect(cv_image_gray,classifier_xml_dir)
       print ('[FD] result ', face_found)
+  
     self.result_.detected_gender = face_found
     self.action_server_.set_succeeded(self.result_)
 
