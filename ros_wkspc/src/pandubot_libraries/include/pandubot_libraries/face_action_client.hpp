@@ -7,6 +7,8 @@
 #include <actionlib/client/simple_action_client.h>
 #include <string>
 
+#include "voice_publisher.hpp"
+
 using std::string;
 using actionlib::SimpleActionClient;
 using actionlib::SimpleClientGoalState;
@@ -26,20 +28,32 @@ enum kGenderSet {
 
 class FaceDetectionClient{
  private:
+  ros::NodeHandle& nh_;
   FaceActionClient face_client_;
   string action_name_;
   SimpleClientGoalState result_;
   face_detectResultConstPtr result_state_ptr_;
+  VoicePublisher face_talker_;
+  bool current_goal_active_;
  public:
-  FaceDetectionClient(string action_name, bool new_thread);
+  FaceDetectionClient(ros::NodeHandle &nh,string action_name, bool new_thread);
 
   // Returns after single detection:
-  bool SendSingleGoalAndWaitForResult(kGenderSet gender_id);
+  bool SendSingleGoalAndWaitWithTimeout(kGenderSet gender_id, float timeout_sec);
 
   // Waits until goal is found or time out reached:
   bool SendAbsoluteGoalWithTimeout(kGenderSet gender_id, int timeout_sec);
 
   // Call only if SendSingleGoalAndWaitForResult returns true:
   int GetDetectedGender();
+
+  // status:
+  bool GoalActive();
+
+  // actionlib callbacks
+  void DoneCb(const actionlib::SimpleClientGoalState& state, 
+              const pandubot_face_detection::face_detectResultConstPtr& result);
+  void FeedbackCb(const pandubot_face_detection::face_detectFeedbackConstPtr& fb);
+  void ActiveCb();
 };
 #endif  // FACE_ACTION_CLIENT_HPP
