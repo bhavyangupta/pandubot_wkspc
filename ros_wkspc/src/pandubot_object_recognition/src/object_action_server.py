@@ -8,7 +8,6 @@ import time
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 
-
 # Custom modules
 from sift import SIFTMatching
 from vbog.MultiScaleRecognizer import MultiScaleRecognizerObject
@@ -41,7 +40,6 @@ class ObjectAction(object):
     print '[OR] started server'
 
   def execute_cb(self,goal):
-    print type(goal)
     print '[OR] goal rx', goal
     self.feedback_.busy_code = 0
     object_found = False;
@@ -61,6 +59,7 @@ class ObjectAction(object):
       print ('vbog Label: ' , vbog_label[0])
       object_found = (vbog_label[0] == goal.target_class)
       return_label = vbog_label
+    
     self.result_.detected_class = return_label
     self.action_server_.set_succeeded(self.result_)              
     

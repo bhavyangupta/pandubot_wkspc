@@ -27,7 +27,8 @@ class MultiScaleRecognizerObject:
     self.PatchSize = (50,50)
     self.NumScales = 9
     self.ScaleFactor = 1.25
-    self.model_file = open('/home/bhavya/pandubot_wkspc/ros_wkspc/src/pandubot_object_recognition/src/vbog/TrainedSVMModel.pickle','rb')
+    # self.model_file = open('/home/bhavya/pandubot_wkspc/ros_wkspc/src/pandubot_object_recognition/src/vbog/TrainedSVMModel.pickle','rb')
+    self.model_file = open('/home/bhavya/VBOW/TrainedSVMModel.pickle','rb')
     self.SVMModel, self.TextLabels, self.km = pickle.load(self.model_file)
 
   def preprocess_bgr_frame(self,bgr_frame):
@@ -45,8 +46,10 @@ class MultiScaleRecognizerObject:
 ## Input Frame should be bgr opncv
 ## The SIFT extractor and the anisotropic diffuser use grayscale internally.
   def predictLabel(self,bgr_frame):
-    gray_frame = self.preprocess_bgr_frame(bgr_frame)
+    # gray_frame = self.preprocess_bgr_frame(bgr_frame)
+    gray_frame = cv2.cvtColor(bgr_frame,cv2.COLOR_BGR2GRAY)
     label,prob = self.SIFTPredictor(gray_frame,self.SVMModel,self.km)
+    print prob
     return label
 
   def SIFTPredictor(self,gray_img,SVMModel,km):

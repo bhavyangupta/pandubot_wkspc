@@ -11,7 +11,8 @@ def test_action():
   client = actionlib.SimpleActionClient('pandubot_object_detection',pandubot_object_recognition.msg.object_actionAction)
   
   client.wait_for_server()
-  while True:
+  i= 0;
+  while i<100:
     goal = 4
     goal = pandubot_object_recognition.msg.object_actionGoal(goal)
     print 'send_goal'
@@ -19,7 +20,8 @@ def test_action():
     print 'sent goal'
     client.wait_for_result()
     print client.get_state()
-    time.sleep(1)
+    # rospy.sleep(1)
+    i = i + 1;
 
 
 if __name__ == '__main__':
