@@ -3,6 +3,6 @@
 <include file="$(find yocs_joyop)/launch/joyop.launch">
   <arg name="cmd_vel_topic_name" value="/cmd_vel_mux/input/teleop"/>
 </include>
-<include file="$(find pandubot_bringup)/launch/ping_pong.launch"/>
+<!--<include file="$(find pandubot_bringup)/launch/ping_pong.launch"/>-->
 
 </launch>
