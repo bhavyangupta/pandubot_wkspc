@@ -8,4 +8,7 @@ ros_wkspc/src/empty/
 *.pyc
 *.py~
 *.swp
+*.swo
 ros_wkspc/log
+*.sublime-project
+*.sublime-workspace
