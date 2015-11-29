@@ -17,13 +17,16 @@ catkin_package(INCLUDE_DIRS   include
                               pandubot_face_detection
                               sound_play
                LIBRARIES      pandubotActionClients
-                              pandubotVoicePublisher)
+                              pandubotVoicePublisher
+                              pandubotUtilities)
 
 add_library(pandubotActionClients src/object_action_client.cpp
                                   src/face_action_client.cpp
                                   src/navigation_action_client.cpp)
 
 add_library(pandubotVoicePublisher src/voice_publisher.cpp)
+
+add_library(pandubotUtilities src/utilities.cpp)
 
 add_dependencies(pandubotActionClients pandubot_object_recognition_generate_messages_cpp
                                        pandubot_face_detection_generate_message_cpp 
@@ -32,6 +35,8 @@ add_dependencies(pandubotActionClients pandubot_object_recognition_generate_mess
 target_link_libraries(pandubotActionClients ${catkin_LIBRARIES})
 
 target_link_libraries(pandubotVoicePublisher ${catkin_LIBRARIES})
+
+target_link_libraries(pandubotUtilities ${catkin_LIBRARIES})
 
 ####### Optional Install Targets ################
 # install(TARGETS pandubotActionClients
