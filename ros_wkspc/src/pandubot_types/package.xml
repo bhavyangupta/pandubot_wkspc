@@ -8,6 +8,8 @@
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend> geometry_msgs </build_depend>
   <run_depend> geometry_msgs </run_depend>
+  <build_depend> pandubot_libraries </build_depend>
+  <run_depend> pandubot_libraries </run_depend>
   <export>
   </export>
 </package>

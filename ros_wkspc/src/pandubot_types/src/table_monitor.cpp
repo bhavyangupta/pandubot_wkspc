@@ -1,11 +1,45 @@
 // Copyright [2015]
-#include "TableMonitor.hpp"
+#include "table_monitor.hpp"
+#include "yaml_operations.hpp"
+#include "yaml-cpp/yaml.h"
+#include "pandubot_libraries/utilities.hpp"
 #include <geometry_msgs/PoseStamped.h>
+#include <ros/ros.h>
+#include <vector>
+#include <map>
+#include <iostream>
+#include <string>
+
+using std::string;
+using std::map;
+using std::cout;
+using std::endl;
+using std::vector;
+
+using geometry_msgs::PoseStamped;
+
+/**
+ * These variables are static and hence need to be declared here so that they
+ * are initialised only once for the program. The default constructor is invoked
+ * on these objects.
+ */
+map<int, TableMonitor::TABLE_STATE>TableMonitor::table_state_;
+map<int, PoseStamped> TableMonitor::table_sampling_pose_;
 
 TableMonitor::TableMonitor(string yaml_filename) {
-  // TODO: Load table YAML here 
-  SetTableState(1,TABLE_UNOCCUPIED);
-  SetTableState(2,TABLE_UNOCCUPIED);
+    YAML::Node root = YAML::LoadFile(yaml_filename);
+    ROS_DEBUG_STREAM("Size: "<<root.size());        
+    for (int i = 0 ; i<root.size(); i++) {
+      YAML::Node entry = root[i];
+      int id = entry["id"].as<int>();
+      vector<float> sampling_pose_vector = entry["pose"].as<vector<float> >();
+      ROS_DEBUG_STREAM(entry);
+      ROS_DEBUG_STREAM(id);
+      PoseStamped sampling_pose_msg = utilities::ConvertVectorToPoseMsg(
+                                                          sampling_pose_vector);
+      table_state_[id] = TABLE_UNOCCUPIED;
+      table_sampling_pose_[id] = sampling_pose_msg;
+    }
 }
 
 /**
