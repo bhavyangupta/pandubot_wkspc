@@ -1,6 +1,7 @@
  // Copyright[2015]
 #include <string>
 #include "speech_synthesiser.hpp"
+#include <pandubot_libraries/object_types.hpp>
 #include <pandubot_libraries/navigation_action_client.hpp>
 #include <pandubot_libraries/face_action_client.hpp>
 #include <pandubot_libraries/object_action_client.hpp>
@@ -31,7 +32,7 @@ int main(int argc, char**argv) {
  // at 1st turn heading to bunk space(facing charity's office):Position(-15.257, 1.147, 0.000), Orientation(0.000, 0.000, 1.000, 0.020) = Angle: 3.103
 
   kGenderSet face_detect_target = GENDER_ANY;
-  kObjectsSet object_recog_target = OBJECT_PEPSI; // int 4
+  object_types::kObjectsSet object_recog_target = object_types::PEPSI; // int 4
 
   ros::Duration timeout_face_s(10);
   ros::Duration timeout_object_s(10);

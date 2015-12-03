@@ -5,5 +5,5 @@
 int main(int argc, char** argv) {
   ros::init(argc,argv,"test_TableMonitor");
   ros::NodeHandle nh;
-  TableMonitor testMonitor("/home/bhavya/pandubot_wkspc/ros_wkspc/src/pandubot_types/test/test_TableMonitor.yaml");
+  TableMonitor testMonitor("/home/bhavya/pandubot_wkspc/ros_wkspc/src/pandubot_libraries/test/test_TableMonitor.yaml");
 }

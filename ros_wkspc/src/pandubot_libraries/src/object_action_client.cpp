@@ -1,6 +1,7 @@
 // Copyright [2015]
 #include "object_action_client.hpp"
-#include  "voice_publisher.hpp"
+#include "object_types.hpp"
+#include "voice_publisher.hpp"
 #include <pandubot_object_recognition/object_actionAction.h>
 #include <string>
 
@@ -8,7 +9,6 @@ using actionlib::SimpleActionClient;
 using actionlib::SimpleClientGoalState;
 using pandubot_object_recognition::object_actionResultConstPtr;
 using pandubot_object_recognition::object_actionFeedbackConstPtr;
-
 
 ObjectDetectionClient::ObjectDetectionClient(ros::NodeHandle &nh, string action_name, bool new_thread)
 : nh_(nh),
@@ -20,7 +20,7 @@ ObjectDetectionClient::ObjectDetectionClient(ros::NodeHandle &nh, string action_
   object_client_.waitForServer();
 }
 
-bool ObjectDetectionClient::SendSingleGoalAndWaitWithTimeout(kObjectsSet object_id,
+bool ObjectDetectionClient::SendSingleGoalAndWaitWithTimeout(object_types::kObjectsSet object_id,
                                                              float timeout_sec) {
   // TODO(bhavya): check server connection
   // TODO(bhavya): publish feedback
@@ -41,7 +41,7 @@ bool ObjectDetectionClient::SendSingleGoalAndWaitWithTimeout(kObjectsSet object_
   return current_goal_active_;
 }
 
-bool ObjectDetectionClient::SendAbsoluteGoalWithTimeout(kObjectsSet object_id,
+bool ObjectDetectionClient::SendAbsoluteGoalWithTimeout(object_types::kObjectsSet object_id,
                                                         int timeout_sec) {
   // // TODO(bhavya): check server connection
   // // TODO(bhavya): publish feedback
