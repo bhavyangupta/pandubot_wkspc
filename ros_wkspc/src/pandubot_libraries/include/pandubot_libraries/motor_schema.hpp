@@ -3,6 +3,7 @@
 #define MOTOR_SCHEMA_HPP
 
 #include <ros/ros.h>
+#include <actionlib/client/simple_action_client.h>
 #include <move_base_msgs/MoveBaseAction.h>
 #include <string>
 
@@ -18,7 +19,7 @@ class MotorSchema {
   TARGET_T current_goal_;
  public:
   MotorSchema() {};
-  virtual bool TrackGoal(TARGET_T target) = 0;
+  virtual void TrackGoal(TARGET_T target) = 0;
   virtual TARGET_T GetCurrentGoal() { return current_goal_; }
 };
 
@@ -30,11 +31,18 @@ namespace pandubot_motor_schemas {
  */
 class GoToPose : public MotorSchema<move_base_msgs::MoveBaseGoal> {
  protected:
-  ros::NodeHandle &nh_;
-  std::string     action_name_;
+  ros::NodeHandle  &nh_;
+  std::string      action_name_;
+  actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction> navigation_client_;
+  void DoneCb(const actionlib::SimpleClientGoalState &state,
+              const move_base_msgs::MoveBaseResultConstPtr &result);
+  void ActiveCb();
+  void FeedbackCb(const move_base_msgs::MoveBaseFeedbackConstPtr &feedback);
+
  public: 
   GoToPose(ros::NodeHandle &nh, std::string action_name);
-  bool TrackGoal(move_base_msgs::MoveBaseGoal goal);
+  void TrackGoal(move_base_msgs::MoveBaseGoal goal);
+  actionlib::SimpleClientGoalState GetState(void);
 };
 
 } // pandubot_motor_schemas

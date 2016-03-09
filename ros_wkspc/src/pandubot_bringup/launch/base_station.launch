@@ -1,0 +1,4 @@
+<launch>
+  <include file = "$(find pandubot_bringup)/launch/behaviors.launch" />
+  <include file = "$(find pandubot_bringup)/launch/find_object.launch" />
+</launch>

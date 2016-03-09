@@ -1,0 +1,116 @@
+[  0%] [  0%] Built target roscpp_generate_messages_cpp
+Built target dynamic_reconfigure_gencfg
+Built target move_base_msgs_generate_messages_py
+[  0%] [  0%] Built target geometry_msgs_generate_messages_cpp
+Built target roscpp_generate_messages_lisp
+[  0%] Built target geometry_msgs_generate_messages_py
+Scanning dependencies of target testPandubotBehaviorsNode
+[  3%] [  3%] [  3%] Built target roscpp_generate_messages_py
+Building CXX object pandubot_behaviors/CMakeFiles/testPandubotBehaviorsNode.dir/src/pandubot_behaviors.cpp.o
+[  3%] Built target rosgraph_msgs_generate_messages_lisp
+Built target actionlib_msgs_generate_messages_lisp
+[  3%] Built target move_base_msgs_generate_messages_cpp
+[  3%] Built target rosgraph_msgs_generate_messages_cpp
+[  3%] Built target std_msgs_generate_messages_cpp
+[  3%] Built target std_msgs_generate_messages_lisp
+[  3%] Built target _pandubot_msgs_generate_messages_check_deps_atomic_plan
+[  3%] Built target _pandubot_msgs_generate_messages_check_deps_MotorSignalMoveBase
+[  3%] Built target move_base_msgs_generate_messages_lisp
+[  3%] Built target rosgraph_msgs_generate_messages_py
+[  3%] Built target _pandubot_msgs_generate_messages_check_deps_ReleaserSignal
+[  3%] Built target std_msgs_generate_messages_py
+[  3%] Built target geometry_msgs_generate_messages_lisp
+[  3%] Built target actionlib_msgs_generate_messages_cpp
+[  3%] [  3%] Built target actionlib_msgs_generate_messages_py
+Built target sensor_msgs_generate_messages_cpp
+[  3%] Built target actionlib_generate_messages_cpp
+[  3%] Built target actionlib_generate_messages_py
+Built target actionlib_generate_messages_lisp
+[  3%] Built target _pandubot_object_recognition_generate_messages_check_deps_object_actionActionResult
+[  3%] Built target _pandubot_object_recognition_generate_messages_check_deps_object_actionGoal
+[  3%] Built target _pandubot_object_recognition_generate_messages_check_deps_object_actionFeedback
+[  3%] Built target _pandubot_object_recognition_generate_messages_check_deps_object_actionActionGoal
+[  3%] Built target _pandubot_object_recognition_generate_messages_check_deps_object_actionAction
+[  3%] Built target _pandubot_object_recognition_generate_messages_check_deps_object_actionResult
+[  3%] Built target _pandubot_object_recognition_generate_messages_check_deps_object_actionActionFeedback
+[  3%] Built target _pandubot_face_detection_generate_messages_check_deps_face_detectActionFeedback
+[  3%] Built target _pandubot_face_detection_generate_messages_check_deps_face_detectActionResult
+[  3%] Built target _pandubot_face_detection_generate_messages_check_deps_face_detectGoal
+[  3%] Built target _pandubot_face_detection_generate_messages_check_deps_face_detectAction
+[  3%] Built target _pandubot_face_detection_generate_messages_check_deps_face_detectResult
+[  3%] Built target _pandubot_face_detection_generate_messages_check_deps_face_detectActionGoal
+[  3%] Built target sensor_msgs_generate_messages_lisp
+[  3%] Built target _pandubot_face_detection_generate_messages_check_deps_face_detectFeedback
+[  3%] Built target sensor_msgs_generate_messages_py
+[ 11%] Built target pandubot_object_recognition_generate_messages_py
+[ 18%] Built target pandubot_object_recognition_generate_messages_cpp
+[ 37%] Built target pandubotSchemas
+[ 40%] Built target pandubotVoicePublisher
+[ 40%] [ 40%] Built target _april_tag_generate_messages_check_deps_AprilTag
+Built target _april_tag_generate_messages_check_deps_AprilTagList
+[ 40%] Built target sound_play_generate_messages_cpp
+[ 40%] Built target sound_play_generate_messages_lisp
+[ 40%] Built target sound_play_generate_messages_py
+[ 40%] Built target dynamic_reconfigure_generate_messages_lisp
+[ 40%] Built target dynamic_reconfigure_generate_messages_cpp
+[ 40%] Built target dynamic_reconfigure_generate_messages_py
+[ 44%] Built target pandubotTypes
+[ 44%] [ 44%] Built target pandubotUtilities
+Built target move_base_gencfg
+[ 48%] Built target pandubot_msgs_generate_messages_lisp
+[ 51%] Built target pandubot_msgs_generate_messages_cpp
+[ 59%] Built target pandubot_msgs_generate_messages_py
+[ 66%] Built target pandubot_object_recognition_generate_messages_lisp
+[ 74%] Built target pandubot_face_detection_generate_messages_cpp
+[ 81%] Built target pandubot_face_detection_generate_messages_lisp
+[ 88%] [ 88%] Built target pandubot_face_detection_generate_messages_py
+Built target april_tag_generate_messages_cpp
+[ 92%] Built target april_tag_generate_messages_lisp
+[ 96%] Built target april_tag_generate_messages_py
+[100%] Built target pandubotActionClients
+[100%] Built target testPandubotSubscribersNode
+/home/bhavya/pandubot_wkspc/ros_wkspc/src/pandubot_behaviors/src/pandubot_behaviors.cpp: In constructor ‘pandubot_behaviors::HouseKeeping::HouseKeeping(ros::NodeHandle&, std::string, bool)’:
+/home/bhavya/pandubot_wkspc/ros_wkspc/src/pandubot_behaviors/src/pandubot_behaviors.cpp:10:4: error: expected identifier before ‘{’ token
+    {
+    ^
+/home/bhavya/pandubot_wkspc/ros_wkspc/src/pandubot_behaviors/src/pandubot_behaviors.cpp:10:4: error: no matching function for call to ‘pandubot_libraries::WaypointManager<move_base_msgs::MoveBaseGoal_<std::allocator<void> > >::WaypointManager()’
+/home/bhavya/pandubot_wkspc/ros_wkspc/src/pandubot_behaviors/src/pandubot_behaviors.cpp:10:4: note: candidates are:
+In file included from /home/bhavya/pandubot_wkspc/ros_wkspc/src/pandubot_behaviors/include/pandubot_behaviors/pandubot_behaviors.hpp:9:0,
+                 from /home/bhavya/pandubot_wkspc/ros_wkspc/src/pandubot_behaviors/src/pandubot_behaviors.cpp:2:
+/home/bhavya/pandubot_wkspc/ros_wkspc/src/pandubot_libraries/include/pandubot_libraries/waypoint_manager.hpp:62:3: note: pandubot_libraries::WaypointManager<WayptType>::WaypointManager(std::string, bool) [with WayptType = move_base_msgs::MoveBaseGoal_<std::allocator<void> >; std::string = std::basic_string<char>]
+   WaypointManager(std::string filename, bool loop_infinitely = false)
+   ^
+/home/bhavya/pandubot_wkspc/ros_wkspc/src/pandubot_libraries/include/pandubot_libraries/waypoint_manager.hpp:62:3: note:   candidate expects 2 arguments, 0 provided
+/home/bhavya/pandubot_wkspc/ros_wkspc/src/pandubot_libraries/include/pandubot_libraries/waypoint_manager.hpp:28:7: note: pandubot_libraries::WaypointManager<move_base_msgs::MoveBaseGoal_<std::allocator<void> > >::WaypointManager(const pandubot_libraries::WaypointManager<move_base_msgs::MoveBaseGoal_<std::allocator<void> > >&)
+ class WaypointManager {
+       ^
+/home/bhavya/pandubot_wkspc/ros_wkspc/src/pandubot_libraries/include/pandubot_libraries/waypoint_manager.hpp:28:7: note:   candidate expects 1 argument, 0 provided
+/home/bhavya/pandubot_wkspc/ros_wkspc/src/pandubot_behaviors/src/pandubot_behaviors.cpp:10:4: error: no matching function for call to ‘pandubot_subscribers::ObjectDetector::ObjectDetector()’
+    {
+    ^
+/home/bhavya/pandubot_wkspc/ros_wkspc/src/pandubot_behaviors/src/pandubot_behaviors.cpp:10:4: note: candidates are:
+In file included from /home/bhavya/pandubot_wkspc/ros_wkspc/src/pandubot_behaviors/include/pandubot_behaviors/pandubot_behaviors.hpp:8:0,
+                 from /home/bhavya/pandubot_wkspc/ros_wkspc/src/pandubot_behaviors/src/pandubot_behaviors.cpp:2:
+/home/bhavya/pandubot_wkspc/ros_wkspc/src/pandubot_behaviors/include/pandubot_behaviors/pandubot_subscribers.hpp:28:3: note: pandubot_subscribers::ObjectDetector::ObjectDetector(ros::NodeHandle&, std::string)
+   ObjectDetector(ros::NodeHandle &nh, std::string topic_name);
+   ^
+/home/bhavya/pandubot_wkspc/ros_wkspc/src/pandubot_behaviors/include/pandubot_behaviors/pandubot_subscribers.hpp:28:3: note:   candidate expects 2 arguments, 0 provided
+/home/bhavya/pandubot_wkspc/ros_wkspc/src/pandubot_behaviors/include/pandubot_behaviors/pandubot_subscribers.hpp:18:7: note: pandubot_subscribers::ObjectDetector::ObjectDetector(const pandubot_subscribers::ObjectDetector&)
+ class ObjectDetector {
+       ^
+/home/bhavya/pandubot_wkspc/ros_wkspc/src/pandubot_behaviors/include/pandubot_behaviors/pandubot_subscribers.hpp:18:7: note:   candidate expects 1 argument, 0 provided
+make[2]: *** [pandubot_behaviors/CMakeFiles/testPandubotBehaviorsNode.dir/src/pandubot_behaviors.cpp.o] Error 1
+make[1]: *** [pandubot_behaviors/CMakeFiles/testPandubotBehaviorsNode.dir/all] Error 2
+make: *** [all] Error 2
+Base path: /home/bhavya/pandubot_wkspc/ros_wkspc
+Source space: /home/bhavya/pandubot_wkspc/ros_wkspc/src
+Build space: /home/bhavya/pandubot_wkspc/ros_wkspc/build
+Devel space: /home/bhavya/pandubot_wkspc/ros_wkspc/devel
+Install space: /home/bhavya/pandubot_wkspc/ros_wkspc/install
+####
+#### Running command: "make cmake_check_build_system" in "/home/bhavya/pandubot_wkspc/ros_wkspc/build"
+####
+####
+#### Running command: "make -j4 -l4" in "/home/bhavya/pandubot_wkspc/ros_wkspc/build/pandubot_behaviors"
+####
+Invoking "make -j4 -l4" failed

@@ -35,9 +35,12 @@ add_library(pandubotActionClients src/object_action_client.cpp
                                   src/navigation_action_client.cpp)
 add_library(pandubotVoicePublisher src/voice_publisher.cpp)
 add_library(pandubotUtilities src/utilities.cpp)
-add_library(pandubotTypes src/utilities.cpp src/table_monitor.cpp)
+add_library(pandubotTypes src/utilities.cpp 
+                          src/table_monitor.cpp)
 add_library(pandubotSchemas src/perceptual_schema.cpp
                             src/motor_schema.cpp
+                            src/behavior_schema.cpp
+                            src/utilities.cpp
                             ${APRIL_TAG_LIB_SOURCE_FILES})
 
 add_dependencies(pandubotActionClients pandubot_object_recognition_generate_messages_cpp
@@ -47,7 +50,7 @@ add_dependencies(pandubotActionClients pandubot_object_recognition_generate_mess
 target_link_libraries(pandubotActionClients ${catkin_LIBRARIES})
 target_link_libraries(pandubotVoicePublisher ${catkin_LIBRARIES})
 target_link_libraries(pandubotUtilities ${catkin_LIBRARIES})
-target_link_libraries(pandubotSchemas ${catkin_LIBRARIES})
+target_link_libraries(pandubotSchemas ${catkin_LIBRARIES} ${YAML_LIBRARY})
 target_link_libraries(pandubotTypes ${catkin_LIBRARIES} ${YAML_LIBRARY} )
 
 ######################### Test executibles ##############################
@@ -61,7 +64,8 @@ target_link_libraries(testMotorSchema ${catkin_LIBRARIES})
 
 add_executable(testBehaviorSchema test/testBehaviorSchema.cpp
                                   src/utilities.cpp
-                                  src/behavior_schema.cpp)
+                                  src/behavior_schema.cpp
+                                  src/motor_schema.cpp)
 target_link_libraries(testBehaviorSchema ${catkin_LIBRARIES} ${YAML_LIBRARY})
 
 add_executable(testTableMonitor test/test_TableMonitor.cpp

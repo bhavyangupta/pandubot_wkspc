@@ -1,0 +1,10 @@
+<launch>
+  <node pkg="image_view" type="image_view" name="webcam_1_image_view">
+      <remap from="image" to="webcam_1/image_raw" />
+      <param name="image_transport" value="compressed"/>
+  </node>
+  <node pkg="image_view" type="image_view" name="webcam_2_image_view">  
+      <remap from="image" to="webcam_2/image_raw" />
+      <param name="image_transport" value="compressed"/>
+  </node>
+</launch>

@@ -17,22 +17,32 @@ using move_base_msgs::MoveBaseGoal;
 typedef SimpleActionClient<MoveBaseAction> NavigationActionClient;
 
 class NavigationClient {
- private:
+ protected:
   NavigationActionClient navigation_client_;
   string action_name_;
   SimpleClientGoalState result_;
   MoveBaseResultConstPtr result_state_ptr_;
+
  public:
   NavigationClient(string action_name, bool new_thread);
 
   // Returns after single detection:
   bool SendSingleGoalAndWaitForResult(float coords[], int dim = 3);
+  bool SendSingleGoalAndWaitForResult(move_base_msgs::MoveBaseGoal goal);
 
   // Waits until goal is found or time out reached:
   bool SendAbsoluteGoalWithTimeout(float coords[], int timeout_s, int dim = 3);
 
+  void CancelAllGoals();
+  actionlib::SimpleClientGoalState GetState();
   // Call only if SendSingleGoalAndWaitForResult returns true:
-  // void GetCurrentPose(float (&coords)[3]);
+  // void GetCurrentPose(float (&coords)[3]); 
+  virtual void SendSingleGoalWithCallback(move_base_msgs::MoveBaseGoal goal);
+
+  virtual void DoneCb(const actionlib::SimpleClientGoalState &state,
+              const move_base_msgs::MoveBaseResultConstPtr &result);
+  virtual void FeedbackCb(const move_base_msgs::MoveBaseFeedbackConstPtr &feedback);
+  virtual void AcceptedCb();
 
   MoveBaseGoal ArrayToROSmsg(float coords[], int dimensions = 3);
 };

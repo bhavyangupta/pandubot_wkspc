@@ -1,0 +1,6 @@
+<launch>
+  <node name="pandubot_executive" pkg="pandubot_executive" type="test_executive_node" output="screen"/>
+  <node name="pandubot_face_detection" pkg="pandubot_face_detection" type="face_detection_node.py" output="screen" />
+  <node name="pandubot_object_recognition" pkg="pandubot_object_recognition" type="object_detection_node.py" output="screen" />
+  <node name="soundplay_node" pkg="sound_play" type="soundplay_node.py"/>
+</launch>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package>
+  <name>pandubot_behaviors</name>
+  <version>0.0.0</version>
+  <description>The pandubot_behaviors package</description>
+  <maintainer email="bhavya@todo.todo">bhavya</maintainer>
+  <license>TODO</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  
+  <build_depend> move_base_msgs </build_depend>
+  <build_depend> actionlib </build_depend>
+  <build_depend> pandubot_msgs </build_depend>
+  <build_depend> std_msgs </build_depend>
+  <build_depend> april_tag </build_depend>
+  <build_depend> pandubot_libraries </build_depend>
+  <build_depend> pandubot_msgs </build_depend>
+  <build_depend> actionlib_msgs</build_depend>
+
+  <run_depend> pandubot_msgs </run_depend>
+  <run_depend> std_msgs </run_depend>
+  <run_depend> april_tag </run_depend>
+  <run_depend> move_base_msgs </run_depend>
+  <run_depend> actionlib </run_depend>
+  <run_depend> pandubot_libraries </run_depend>
+  <run_depend> pandubot_msgs </run_depend>
+  <run_depend> actionlib_msgs </run_depend>
+
+  <export>
+  </export>
+</package>

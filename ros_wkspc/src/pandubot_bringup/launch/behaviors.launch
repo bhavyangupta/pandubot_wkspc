@@ -1,0 +1,4 @@
+<launch>
+  <node name="test_behaviors" pkg="pandubot_behaviors" type="testPandubotBehaviorsNode" output="screen">
+  </node>
+</launch>

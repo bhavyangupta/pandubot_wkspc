@@ -1,0 +1,3 @@
+Header header
+string behavior_id
+move_base_msgs/MoveBaseGoal command

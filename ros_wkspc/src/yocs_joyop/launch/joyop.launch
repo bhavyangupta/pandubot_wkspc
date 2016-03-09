@@ -6,7 +6,7 @@
 
 <launch>
   <arg name="device"                default="/dev/input/js0"/>
-  <arg name="deadzone"              default="0.05"/>
+  <arg name="deadzone"              default="0.12"/>
   <arg name="autorepeat_rate"       default="0"/>
   <arg name="coalesce_interval"     default="0.001"/>
   <arg name="linear_axis"           default="1"/>

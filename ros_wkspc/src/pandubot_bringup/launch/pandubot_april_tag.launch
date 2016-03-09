@@ -1,0 +1,5 @@
+<launch>
+<node name="aprilTagDetector" type="april_tag_node" pkg="april_tag">
+  <remap from="camera/image_raw" to="webcam_2/image_raw" />
+</node>
+</launch>

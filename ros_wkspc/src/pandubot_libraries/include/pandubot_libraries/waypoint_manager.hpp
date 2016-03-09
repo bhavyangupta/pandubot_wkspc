@@ -23,6 +23,7 @@
  * 
  */
 
+namespace pandubot_libraries {
 template <typename WayptType>
 class WaypointManager {
  protected:
@@ -52,13 +53,14 @@ class WaypointManager {
       waypt_node = root[i];
       waypoint = waypt_node.as<std::vector<float> >();
       waypt_msg = pandubot_utilities::ConvertVectorToGoalMsg(waypoint,frame_id_);
+      // pandubot_utilities::PrintGoalMsg(waypt_msg);
       waypoints_.push_back(waypt_msg);
     }
     ROS_INFO_STREAM("Number of Waypoints " << waypoints_.size());    
   } 
 
  public:
-  WaypointManager(std::string filename, bool loop_infinitely = true)
+  WaypointManager(std::string filename, bool loop_infinitely = false)
   : loop_infinitely_(loop_infinitely),
     current_waypt_idx_(0),
     next_waypt_idx_(1) {
@@ -73,12 +75,19 @@ class WaypointManager {
    */
   WayptType GetNextWaypoint() {
     // [DONE]: check for overflows and reset.
-    current_waypt_idx_ = next_waypt_idx_;
-    next_waypt_idx_++;
     if(next_waypt_idx_ > number_of_waypoints_ - 1) { // Reached end of list.
-      next_waypt_idx_ = 0;                           // Reset counters to zero.
-    }
-    return (waypoints_.at(current_waypt_idx_));        
+      ROS_INFO_STREAM("Reached end of waypoint list");
+      if (loop_infinitely_) {                       // Reset counters to zero.
+        next_waypt_idx_ = 0;                        
+      } else current_waypt_idx_ = 0;                // Send the home waypoint
+    } 
+    // else {
+      current_waypt_idx_ = next_waypt_idx_;
+      next_waypt_idx_++;
+    // }
+    ROS_INFO_STREAM(current_waypt_idx_);
+    WayptType next_waypt = waypoints_.at(current_waypt_idx_);
+    return next_waypt;        
   }
  
   /** 
@@ -112,5 +121,7 @@ class WaypointManager {
     next_waypt_idx_ = 1;
   }
 };
+
+} // namespace pandubot_libraries
 
 #endif  // WAYPOINT_MANAGER_HPP 

@@ -42,10 +42,11 @@ TableMonitor::TableMonitor(string yaml_filename) {
       YAML::Node entry = root[i];
       id = entry["id"].as<int>();
       sampling_pose_vector = entry["pose"].as<vector<float> >();
-      ROS_DEBUG_STREAM(entry);
-      ROS_DEBUG_STREAM(id);
+      ROS_INFO_STREAM(entry);
+      ROS_INFO_STREAM(id);
       sampling_pose_msg = pandubot_utilities::
                     ConvertVectorToGoalMsg(sampling_pose_vector,frame_id_);
+      pandubot_utilities::PrintGoalMsg(sampling_pose_msg);
       table_state_[id] = TABLE_UNOCCUPIED;
       table_sampling_pose_[id] = sampling_pose_msg;
     }
@@ -58,6 +59,16 @@ TableMonitor::TableMonitor(string yaml_filename) {
  */
 void TableMonitor::SetTableState(int id, TableMonitor::kTABLE_STATE new_state) {
   table_state_[id] = new_state;
+}
+
+/** Moves the state of the table_id to the next logical state */
+void TableMonitor::UpdateTableState(int id) {
+  TableMonitor::kTABLE_STATE current_state = GetTableState(id);
+  if (current_state == TABLE_UNOCCUPIED) {
+    SetTableState(id, TABLE_OCCUPIED);
+  } else if (current_state == TABLE_OCCUPIED) {
+    SetTableState(id, TABLE_UNOCCUPIED);
+  }
 }
 
 /**
@@ -87,4 +98,23 @@ MoveBaseGoal TableMonitor::GetTableSamplingPose(int id) {
  */
 TableMonitor::kTABLE_STATE TableMonitor::GetTableState(int id) {
   return table_state_[id];
+}
+
+
+/** 
+ *  Returns tag id from queried sampling pose msg. 
+ *  Returns -1 if pose is not found. 
+ */
+int TableMonitor::GetIdFromSamplingPose(move_base_msgs::MoveBaseGoal pose) {
+  map<int, MoveBaseGoal>::iterator it;
+  bool found = false;
+  for(it = table_sampling_pose_.begin(); it != table_sampling_pose_.end(); it++) {
+    MoveBaseGoal value = it->second; 
+    if (value == pose) {
+      return it->first;
+    }
+  }
+  if (!found) {
+    return -1;
+  }
 }

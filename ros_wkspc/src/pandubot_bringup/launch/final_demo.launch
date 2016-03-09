@@ -1,0 +1,5 @@
+<launch> 
+<!--  <include file="$(find pandubot_bringup)/launch/find_object.launch" /> -->
+  <include file="$(find pandubot_bringup)/launch/pandubot_april_tag.launch" />
+  <node name="mainNode" type="finalNode" pkg="pandubot_behaviors"/>
+</launch>
